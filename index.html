@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canonical Capsules: Unsupervised Capsules in Canonical Pose</title>
+</head>
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    div.container {
+        width: 60%;
+        margin: 0 auto;
+        text-align: justify;
+    }
+
+    .teaser_vid {
+        /* border: 2px solid gray; */
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+
+
+    #title {
+        font-family: Gill Sans, Verdana;
+        font-size: 11px;
+        line-height: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    #authors{
+        font-family: Fanwood Text;
+        font-size: 20px;
+        line-height: 14px;
+        /* text-transform: uppercase; */
+        /* letter-spacing: 1px; */
+        font-weight: bold;
+        /* color: #444; */
+    }
+    #material{
+	    margin-top: 10px;
+	    font-family: 'Times New Roman', serif;
+	    font-size: 20px;
+	    text-align: center;
+        font-weight: bold;
+	    margin-left: auto;
+	    margin-right: auto;
+    }
+    #bar{
+        height: 1px; 
+        background-color: #0c0c0c52;
+    }
+
+    div.container p {
+        font-family: Times New Roman, times, times-roman, georgia, serif;
+        font-size: 20px;
+        line-height: 30px;
+        margin: 0 auto;
+        /* width: 70%; */
+        text-align: justify;
+        color: #444;
+        /* background-color: #7e7b7b34; */
+    }
+
+    div.container h2 {
+        font-family: times, Times New Roman, times-roman, georgia, serif;
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: -1px;
+        color: #444;
+    }
+
+    div.container h3 {
+        font-family: times, Times New Roman, times-roman, georgia, serif;
+        font-size: 30px;
+        line-height: 20px;
+        letter-spacing: -1px;
+        color: #444;
+        /* background-color: #7e7b7b34; */
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+        <br>
+        <div id="bar"></div>
+        <br>
+        <H2 style="text-align: center;"> Canonical Capsules: Unsupervised Capsules in Canonical Pose </H2>
+        <br>
+        <div id="authors" style="text-align: center;"> 
+            <a href="https://weiweisun2018.github.io" target="_blank">Weiwei Sun</a> <sup>1 4 *</sup> &nbsp; &nbsp;
+            <a href="https://taiya.github.io" target="_blank">Andrea Tagliasacchi</a> <sup>2 3 *</sup> &nbsp; &nbsp;
+            <a href="https://boyangdeng.com" target="_blank">Boyang Deng</a> <sup>3</sup> &nbsp; &nbsp;
+            <a href="https://scholar.google.ca/citations?user=l8wQ39EAAAAJ&hl=en" target="_blank">Sara Sabour</a> <sup>2 3</sup> &nbsp; &nbsp; <br><br>
+            <a href="https://canonical-capsules.github.io" target="_blank">Soroosh Yazdani</a> <sup>3</sup> &nbsp; &nbsp;
+            <a href="https://www.cs.toronto.edu/~hinton" target="_blank">Geoffrey Hinton</a> <sup>2 3</sup> &nbsp; &nbsp;
+            <a href="https://www.cs.ubc.ca/~kmyi" target="_blank">Kwang Moo Yi</a> <sup>1 4</sup> &nbsp; &nbsp;
+        </div>
+        <br>
+        <br>
+
+        <div id="authors" style="text-align: center;"> 
+            <sup>1</sup> University of British Columbia  &nbsp;
+            <sup>2</sup> University of Toronto  &nbsp; <br><br>
+            <sup>3</sup> Google Research  &nbsp;
+            <sup>4</sup> University of Victoria &nbsp; 
+            <sup>*</sup> Equal contributions 
+        </div><br>
+
+        <div id= "material">
+            <a href="https://canonical-capsules.github.io" target="_blank">[ArXiv]</a>&nbsp; &nbsp; 
+            <a href="https://canonical-capsules.github.io" target="_blank">[Code(coming)]</a> &nbsp; &nbsp;
+            <a href="https://canonical-capsules.github.io" target="_blank">[Presentation video]</a>&nbsp; &nbsp; 
+            <a href="https://canonical-capsules.github.io" target="_blank">[Slides]</a>&nbsp; &nbsp;
+        </div><br>
+        <div id="bar"></div>
+        <br>
+        <!-- <H3 style="text-align: center;"> Abstract</H3> -->
+        <img src="gifs/teaser.gif" width=90% class="center">
+        <br><br><br>
+        <div id="bar"></div>
+
+        <H3 style="text-align: center;"> Abstract</H3>
+        <!-- <div id="title">Supplementary Appendix:</div> -->
+        <p>
+            We propose an unsupervised capsule architecture for 3D point clouds.
+            We compute capsule decompositions of objects through permutation-equivariant attention, and self-supervise the process by training with pairs of randomly rotated objects.
+            Our key idea is to aggregate the attention masks into semantic keypoints, and use these to supervise a decomposition that satisfies the capsule invariance/equivariance properties.
+            This not only enables the training of a semantically consistent decomposition, but also allows us to learn a canonicalization operation that enables object-centric reasoning.
+            In doing so, we require neither classification labels nor manually-aligned training datasets to train.
+            Yet, by learning an object-centric representation in an unsupervised manner, our method outperforms the state-of-the-art on 3D point cloud reconstruction, registration, and unsupervised classification.
+            We will release the code and dataset to reproduce our results as soon as the paper is published.
+        </p><br>
+        <div id="bar"></div>
+        <!-- <div id="title">Qualitative Highlights:</div> -->
+        <H3 style="text-align: center;"> Qualitative Highlights </H3>
+        <p> We show qualitative highlights, where we decompose a 3D point
+            clouds and auto-encode them using Canonical Capsules. We color each
+            Canonical Capsule with a unique colour, and similarly color "patches"
+            from the reconstruction heads of 3D-PointCapsNet and AtlasNetV2.
+            Canonical Capsules provide semantically consistent decomposition that
+            is aligned in canonical frame, leading to improved reconstruction
+            quality and unsupervised classification performance.
+        </p>
+    </div>
+
+    <br><br><br>
+
+    <table class="teaser_vid">
+        <tr>
+            <td colspan="6" style="background-color: #eeeeee; font-size: 20px;">
+                Results with the single-category Canonical Capsules
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <video width="100%" loop autoplay muted>
+                    <source src="videos/single_cat_airplane_1.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <video width="100%" loop autoplay muted>
+                    <source src="videos/single_cat_airplane_2.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td width=16.66% style="font-size: 18px;"> Input </td>
+            <td width=16.66% style="font-size: 18px;"> Decomposition </td>
+            <td width=16.66% style="font-size: 18px;"> <i>Ours</i> reconstruction in canonical frame - not a still image! </td>
+            <td width=16.66% style="font-size: 18px;"> <i>Ours</i> reconstruction in input frame</td>
+            <td width=16.66% style="font-size: 18px;"> 3D-PointCapsNet reconstruction </td>
+            <td width=16.66% style="font-size: 18px;"> AtlasNetV2 reconstruction </td>
+        </tr>
+    </table>
+    <br>
+
+    <table class="teaser_vid">
+        <tr>
+            <td colspan="6" style="background-color: #eeeeee; font-size: 20px;">
+                Results with the multi-category Canonical Capsules
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <video width="100%" loop autoplay muted>
+                    <source src="videos/multi_cat_airplane_1.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <video width="100%" loop autoplay muted>
+                    <source src="videos/multi_cat_airplane_2.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <video width="100%" loop autoplay muted>
+                    <source src="videos/multi_cat_table_1.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <video width="100%" loop autoplay muted>
+                    <source src="videos/multi_cat_table_2.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <video width="100%" loop autoplay muted>
+                    <source src="videos/multi_cat_firearm_1.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <video width="100%" loop autoplay muted>
+                    <source src="videos/multi_cat_firearm_2.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <video width="100%" loop autoplay muted>
+                    <source src="videos/multi_cat_bench.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <video width="100%" loop autoplay muted>
+                    <source src="videos/multi_cat_chair.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <video width="100%" loop autoplay muted>
+                    <source src="videos/multi_cat_car.mp4" type="video/mp4">
+                </video>
+            </td>
+        </tr>
+        <tr>
+            <td width=16.66% style="font-size: 18px;"> Input </td>
+            <td width=16.66% style="font-size: 18px;"> Decomposition </td>
+            <td width=16.66% style="font-size: 18px;"> <i>Ours</i> reconstruction in canonical frame </td>
+            <td width=16.66% style="font-size: 18px;"> <i>Ours</i> reconstruction in input frame</td>
+            <td width=16.66% style="font-size: 18px;"> 3D-PointCapsNet reconstruction </td>
+            <td width=16.66% style="font-size: 18px;"> AtlasNetV2 reconstruction </td>
+        </tr>
+    </table>
+    <div class="container">
+        <div id="bar"></div><br>
+        <!-- <hr style="clear:both;" /> -->
+        <!-- <p style="text-align:center;">
+            The supplementary videos are encoded by FFMPEG with h.264 codec. </br> If you can't play the video, please
+            download the VLC player at: <a
+                href="http://www.videolan.org/vlc/index.html">http://www.videolan.org/vlc/index.html</a>
+        </p>
+        <hr style="clear:both;" /> -->
+
+        <p>
+            <b>Acknowledgement</b>: This work was supported by the Natural Sciences and Engineering Research Council of Canada (NSERC) Discovery Grant, NSERC Collaborative Research and Development Grant, Google, Compute Canada, and Advanced Research Computing at the University of British Columbia.
+        </p><br>
+    </div>
+
+</body>
+
+</html>
